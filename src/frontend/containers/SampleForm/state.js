@@ -42,10 +42,22 @@ module.exports = React.createClass({
   displayName: 'State',
 
   getInitialState: function () {
-    return presets.checkboxOnly
+    return presets.init
+  },
+
+  updateText: function () {
+    return presets.textOnly
+  },
+
+  toggle: function () {
+    return presets.withValues
+  },
+
+  submitForm: function () {
+    return presets.error
   },
 
   render: function () {
-    return <Component {...this.state} />
+    return <Component {...this.state} {...this.actions} />
   }
 })
